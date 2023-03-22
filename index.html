@@ -16,10 +16,15 @@
 	    		We use a uniform grid acceleration structure to speed up the raytracer. First, we have the Box structure to implement bounding boxes for primitives and represent the cells in the grid.
 	    		This also involved implementing the ray-box intersections. This is seen in the files Box.h and Box.cpp. Then we represent the grid as a UniformGrid structure, which contains a sequence
 	    		Cell objects. Each cell contains a Box to representing it and a sequence of primitives that intersect with that particular Cell. The raytracing algorithm utilizes this grid structure to
-	    		reduce the number of intersection tests significantly. It traverses the grid, only checking for intersection with objects that overlap with the Cells the ray intersects.
+	    		reduce the number of intersection tests significantly. It traverses the grid, only checking for intersection with objects that overlap with the Cells the ray intersects. We also make use of
+	    		parallelization to further hasten the process.
 	    	<h3>Uniform Grid results</h3>
 	    		With the uniform grid structure and parallelization implemented, test scene 7 (dragon) renders in about 30 minutes. Without parallelization or acceleration, the image takes over
 	    		1 hour and 30 minutes to render!
+	    	<h3>Additional images (Extra Credit)</h3>
+	    		A scene we used to test specular:<br>
+	    		![Specular test image](/scene4.png)
+	    		
         
     </main>
 	<script src="index.js"></script>
